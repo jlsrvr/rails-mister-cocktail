@@ -1,0 +1,21 @@
+<div class="banner" >
+  <div class="banner-content">
+    <h1>Magic Cocktails</h1>
+    <p>Change your life, learn to drink</p>
+    <%= link_to "Add Cocktails", new_cocktail_path, input_html: { class: "btn btn-primary btn-lg" } %></a>
+  </div>
+</div>
+
+
+<% @cocktails.each do |cocktail| %>
+  <div class="card-cocktail">
+  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg">
+  <div class="card-cocktail-infos">
+    <div>
+      <h2><%= link_to cocktail.name, cocktail_path(cocktail) %></h2>
+    </div>
+  </div>
+</div>
+
+<% end %>
+

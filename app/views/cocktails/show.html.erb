@@ -1,0 +1,10 @@
+<h2><%= @cocktail.name %></h2>
+<p><% @cocktail %></p>
+<ul>
+  <% @cocktail.doses.each do |dose| %>
+    <li><%= dose.description %> <%= Ingredient.find(dose.ingredient_id).name %> <%= link_to '<i class="fas fa-trash-alt"></i>'.html_safe, dose_path(dose), method: :delete, data: { confirm: "Are you sure?'" } %></li>
+  <% end %>
+</ul>
+
+<%= link_to "Add Dose", new_cocktail_dose_path(@cocktail) %>
+<%= link_to "index", cocktails_path %>
