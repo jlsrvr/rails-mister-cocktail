@@ -1,21 +1,30 @@
 <div class="banner" >
   <div class="banner-content">
-    <h1>Magic Cocktails</h1>
+    <h1>Manly Cocktails</h1>
     <p>Change your life, learn to drink</p>
-    <%= link_to "Add Cocktails", new_cocktail_path, input_html: { class: "btn btn-primary btn-lg" } %></a>
+    <%= link_to "Add Cocktails", new_cocktail_path, class: "btn-mine" %>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <% @cocktails.each do |cocktail| %>
+      <div class="col-xs-12 col-sm-6 col-md-3">
+        <div class="card-cocktail">
+          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg">
+          <div class="card-cocktail-infos">
+            <div>
+              <h2><%= link_to cocktail.name, cocktail_path(cocktail) %></h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
   </div>
 </div>
 
+<div class="droplet-div">
+        <!-- First change the square to a drop -->
+        <%= link_to "Add Cocktails", new_cocktail_path, class: "droplet droplet-1" %>
+      </div>
 
-<% @cocktails.each do |cocktail| %>
-  <div class="card-cocktail">
-  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg">
-  <div class="card-cocktail-infos">
-    <div>
-      <h2><%= link_to cocktail.name, cocktail_path(cocktail) %></h2>
-    </div>
-  </div>
-</div>
-
-<% end %>
 

@@ -1,0 +1,43 @@
+.btn-mine {
+ color: #C56F29;
+ font-weight: bold;
+ border: 1px solid #C56F29;
+ padding: 10px 20px;
+ border-bottom-left-radius: 14px;
+ border-top-right-radius: 14px;
+ opacity: 0.6;
+ transition: 0.3s ease;
+}
+
+.btn-mine:hover {
+ color: #C56F29;
+ border-bottom-right-radius: 14px;
+ border-top-left-radius: 14px;
+ border-bottom-left-radius: 0px;
+ border-top-right-radius: 0px;
+ opacity: 1;
+}
+
+.droplet {
+  cursor: pointer;
+  font-weight: bold;
+  border: 1px solid #C56F29;
+  padding: 10px 20px;
+  border-radius: 14px;
+  opacity: 0.6;
+  transition: all 1s ease;
+}
+
+/* DROPLET 1 */
+/* First change the square to a drop */
+  .droplet-1:hover {
+    width: 30px;
+    height: 30px;
+    border-radius: 50% 50% 50% 5%;
+    transform: rotate(135deg);
+    background-color: black;
+    transition: all 1s ease;
+    a {
+      display: none;
+    }
+  }

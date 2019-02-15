@@ -1,10 +1,28 @@
-<h2><%= @cocktail.name %></h2>
-<p><% @cocktail %></p>
-<ul>
-  <% @cocktail.doses.each do |dose| %>
-    <li><%= dose.description %> <%= Ingredient.find(dose.ingredient_id).name %> <%= link_to '<i class="fas fa-trash-alt"></i>'.html_safe, dose_path(dose), method: :delete, data: { confirm: "Are you sure?'" } %></li>
-  <% end %>
-</ul>
-
-<%= link_to "Add Dose", new_cocktail_dose_path(@cocktail) %>
-<%= link_to "index", cocktails_path %>
+<div class="card-show" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://picsum.photos/700/180/?random
+)">
+  <%= @cocktail.name %>
+<%= link_to "index", cocktails_path, class: "btn btn-primary"  %>
+</div>
+<div class="container">
+  <div class="description">
+    <h2>Description</h2>
+    <p>TODO:Interpolate description here</p>
+    <div class="description-actions">
+      <p class="actions-element">TODO:Edit</p>
+      <p class="actions-element">TODO:Delete</p>
+     </div>
+  </div>
+  <div class="ingredients">
+    <h2>Ingredients</h2>
+    <ul>
+      <% @cocktail.doses.each do |dose| %>
+        <li><%= dose.description %> <%= Ingredient.find(dose.ingredient_id).name %> <%= link_to '(Remove)'.html_safe, dose_path(dose), method: :delete, data: { confirm: "Are you sure?'" } %></li>
+      <% end %>
+    </ul>
+      <%= simple_form_for [@cocktail, @dose] do |f| %>
+        <%= f.input :description %>
+        <%= f.association :ingredient %>
+        <%= f.submit "Add ingredient" %>
+      <% end %>
+  </div>
+</div>
