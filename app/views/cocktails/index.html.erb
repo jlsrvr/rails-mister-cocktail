@@ -2,7 +2,8 @@
   <div class="banner-content">
     <h1>Manly Cocktails</h1>
     <p>Change your life, learn to drink</p>
-    <%= link_to "Add Cocktails", new_cocktail_path, class: "btn-mine" %>
+     <!-- <%= link_to "Add Cocktails", new_cocktail_path, class: "btn-mine" %> -->
+    <%= link_to '<div class="droplet droplet-1"><p>Add Cocktails</p></div>'.html_safe, new_cocktail_path %>
   </div>
 </div>
 <div class="container">
@@ -22,9 +23,5 @@
   </div>
 </div>
 
-<div class="droplet-div">
-        <!-- First change the square to a drop -->
-        <%= link_to "Add Cocktails", new_cocktail_path, class: "droplet droplet-1" %>
-      </div>
 
 
